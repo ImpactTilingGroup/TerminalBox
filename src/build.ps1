@@ -19,10 +19,10 @@
 
 Write-Host "--- Welcome to the TerminalBox Build Utility ---" -ForegroundColor Green
 
-# Check if the Electron Packager isn't missing.
-if (-Not (Test-Path "node_modules/@electron/packager/bin/electron-packager.js")) {
-    Write-Host "Error! Could not find electron-packager.js install directory. Terminating..." -ForegroundColor Red
-    exit
+# Check if Electron is installed.
+if (-Not (Test-Path "node_modules/electron")) {
+    Write-Host "Error! Electron is not installed. Installing..." -ForegroundColor Red
+    & npm install electron
 }
 
 # If Electron Packager was found, prompt the user to choose the platform to build TerminalBox for.
