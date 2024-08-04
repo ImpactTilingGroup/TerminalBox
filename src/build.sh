@@ -20,13 +20,13 @@
 
 echo "\033[1;32m--- Welcome to the TerminalBox Build Utility ---\033[0m"
 
-# Check if the Electron Packager isn't missing.
-if [ ! -f node_modules/@electron/packager/bin/electron-packager.js ]; then
-    echo "\033[1;31mError! Could not find electron-packager.js install directory. Terminating...\033[0m"
-    exit 1
+# Check if Electron is installed.
+if [ ! -f node_modules/electron ]; then
+    echo "\033[1;31mError! Electron is not installed. Installing...\033[0m"
+    npm install electron
 fi
 
-# If Electron Packager was found, prompt the user to choose the platform to build TerminalBox for.
+# If Electron is installed, prompt the user to choose the platform to build TerminalBox for.
 echo "Which platform do you want to build TerminalBox for?"
 echo "1. Mac"
 echo "2. Windows"
