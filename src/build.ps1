@@ -25,13 +25,13 @@ if (-Not (Test-Path "node_modules/electron")) {
     & npm install electron
 }
 
-# If Electron is installed, prompt the user to choose the platform to build TerminalBox for.
+# If Electron Packager was found, prompt the user to choose the platform to build TerminalBox for.
 Write-Host "Which platform do you want to build TerminalBox for?"
 Write-Host "1. Mac"
 Write-Host "2. Windows"
 Write-Host "3. Linux"
 
-$choice = Read-Host "Enter your choice (1/2/3)"
+$choice = Read-Host "Enter an available option (1/2/3)"
 
 # After choosing a valid platform, prompt the user to choose the architecture if needed.
 switch ($choice) {
@@ -40,11 +40,11 @@ switch ($choice) {
         & node_modules/@electron/packager/bin/electron-packager.js . TerminalBox --platform=darwin --arch=universal --icon=icon/terminalbox.icns --overwrite
     }
     2 {
-        Write-Host "Choose architecture for Windows:"
+        Write-Host "Select architecture for Windows:"
         Write-Host "1. x64"
         Write-Host "2. arm64"
         Write-Host "3. ia32"
-        $arch_choice = Read-Host "Enter your choice (1/2/3)"
+        $arch_choice = Read-Host "Enter an available option (1/2/3)"
         
         switch ($arch_choice) {
             1 { $arch = "x64" }
@@ -59,10 +59,10 @@ switch ($choice) {
         & node_modules/@electron/packager/bin/electron-packager.js . TerminalBox --platform=win32 --arch=$arch --icon=icon/terminalbox.ico --overwrite
     }
     3 {
-        Write-Host "Choose architecture for Linux:"
+        Write-Host "Select architecture for Linux:"
         Write-Host "1. x64"
         Write-Host "2. arm64"
-        $arch_choice = Read-Host "Enter your choice (1/2)"
+        $arch_choice = Read-Host "Enter an available option (1/2)"
         
         switch ($arch_choice) {
             1 { $arch = "x64" }
