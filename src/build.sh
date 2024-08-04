@@ -32,7 +32,7 @@ echo "1. Mac"
 echo "2. Windows"
 echo "3. Linux"
 
-read -p "Choose a platform (1/2/3): " choice
+read -p "Enter an available option (1/2/3): " choice
 
 # After choosing a valid platform, prompt the user to choose the architecture if needed.
 case $choice in
