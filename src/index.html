@@ -1,0 +1,46 @@
+<!--  index.html - TerminalBox User Interface
+----
+----  This file is part of the TerminalBox open-source project.
+----
+----  Copyright (c) 2024 Impact Tiling Group Pty Ltd. All rights reserved. All external libraries
+----  used in TerminalBox (c) their respective owners.
+----
+----  TerminalBox is free software: you can redistribute it and/or modify it under the terms of
+----  the GNU General Public License as published by the Free Software Foundation, either version
+----  of the License, or (at your option) any later version.
+----
+----  TerminalBox is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+----  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See
+----  the GNU General Public License for more details.
+----
+----  You should have received a copy of the GNU General Public License along with this program. If
+----  not, see https://www.gnu.org/licenses. For inquiries, contact us at support@mytestapp.me.
+--->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="main.css">
+                <script src="tbsh.js" defer></script>
+                <script src="node_modules/ace-builds/src/ace.js"></script>
+                <script src="skulpt-dist/skulpt.min.js"></script>
+                <script src="skulpt-dist/skulpt-stdlib.js"></script>
+            </head>
+<body>
+    <div id="terminal">
+        <div id="output">TerminalBox v2.1. Copyright (c) <script type="text/javascript">document.write(new Date().getFullYear());</script> Impact Tiling Group Pty Ltd. All rights reserved. All external libraries used (c) their respective owners.</div>
+        <div id="input-row">
+            <span>$</span>
+            <input id="input" type="text" autofocus>
+        </div>
+    </div>
+    <div id="code-editor-window">
+        <div class="close-button" onclick="closeCodeEditorWindow()"></div>
+        <div id="ace-editor"></div>
+        <button id="save-button" onclick="saveFile()">Save</button>
+        <button id="execute-button" onclick="executeCode()" style="display: none;">Execute</button>
+        <button id="save-execute-button" onclick="saveAndExecuteCode()" style="display: none;">Save and Execute</button>
+    </div>
+</body>
+</html>

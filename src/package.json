@@ -1,0 +1,19 @@
+{
+  "name": "TerminalBox",
+  "version": "2.1.0",
+  "description": "Open-Source Terminal by Impact Tiling Group Pty Ltd",
+  "main": "main.js",
+  "devDependencies": {
+    "@electron/packager": "^18.3.3",
+    "electron": "^31.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ImpactTilingGroup/TerminalBox"
+  },
+  "author": "Impact Tiling Group Pty Ltd",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "ace-builds": "^1.35.4"
+  }
+}
