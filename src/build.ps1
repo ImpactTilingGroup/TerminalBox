@@ -25,7 +25,7 @@ if (-Not (Test-Path "node_modules/electron")) {
     & npm install electron
 }
 
-# If Electron Packager was found, prompt the user to choose the platform to build TerminalBox for.
+# If Electron is installed, prompt the user to choose the platform to build TerminalBox for.
 Write-Host "Which platform do you want to build TerminalBox for?"
 Write-Host "1. Mac"
 Write-Host "2. Windows"
