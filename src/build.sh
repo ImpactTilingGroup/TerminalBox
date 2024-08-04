@@ -41,11 +41,11 @@ case $choice in
         node_modules/@electron/packager/bin/electron-packager.js . TerminalBox --platform=darwin --arch=universal --icon=icon/terminalbox.icns --overwrite
         ;;
     2)
-        echo "Choose architecture for Windows:"
+        echo "Select architecture for Windows:"
         echo "1. x64"
         echo "2. arm64"
         echo "3. ia32"
-        read -p "Choose an architecture (1/2/3): " arch_choice
+        read -p "Enter an available option (1/2/3): " arch_choice
         case $arch_choice in
             1) arch="x64" ;;
             2) arch="arm64" ;;
@@ -56,10 +56,10 @@ case $choice in
         node_modules/@electron/packager/bin/electron-packager.js . TerminalBox --platform=win32 --arch=$arch --icon=icon/terminalbox.ico --overwrite
         ;;
     3)
-        echo "Choose architecture for Linux:"
+        echo "Select architecture for Linux:"
         echo "1. x64"
         echo "2. arm64"
-        read -p "Enter your choice (1/2): " arch_choice
+        read -p "Enter an available option (1/2): " arch_choice
         case $arch_choice in
             1) arch="x64" ;;
             2) arch="arm64" ;;
